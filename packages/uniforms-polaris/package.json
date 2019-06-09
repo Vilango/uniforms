@@ -1,0 +1,34 @@
+{
+  "name": "uniforms-polaris",
+  "version": "2.0.0-alpha.1",
+  "license": "MIT",
+  "main": "index.js",
+  "description": "Unstyled components for uniforms.",
+  "repository": "https://github.com/vilango/uniforms/tree/master/packages/uniforms-polaris",
+  "bugs": "https://github.com/vilango/uniforms/issues",
+  "keywords": [
+    "form",
+    "forms",
+    "meteor",
+    "react",
+    "react-component",
+    "schema",
+    "validation"
+  ],
+  "files": [
+    "*.js",
+    "src/"
+  ],
+  "peerDependencies": {
+    "react": "^16.0.0 || ^15.0.0 || ^0.14.0",
+    "@shopify/polaris": "^3.16.0",
+    "@shopify/polaris-icons": "^3.4.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "invariant": "^2.0.0",
+    "lodash": "^4.0.0",
+    "prop-types": "^15.5.7",
+    "uniforms": "^2.0.0-alpha.1"
+  }
+}
