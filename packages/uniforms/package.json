@@ -1,5 +1,5 @@
 {
-  "name": "uniforms",
+  "name": "@vilango/uniforms",
   "version": "2.0.0-alpha.1",
   "license": "MIT",
   "main": "index.js",
