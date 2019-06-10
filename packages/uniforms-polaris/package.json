@@ -1,6 +1,6 @@
 {
   "name": "@vilango/uniforms-polaris",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "license": "MIT",
   "main": "index.js",
   "description": "Unstyled components for uniforms.",
@@ -20,9 +20,9 @@
     "src/"
   ],
   "peerDependencies": {
-    "react": "^16.0.0 || ^15.0.0 || ^0.14.0",
     "@shopify/polaris": "^3.16.0",
-    "@shopify/polaris-icons": "^3.4.0"
+    "@shopify/polaris-icons": "^3.4.0",
+    "react": "^16.0.0 || ^15.0.0 || ^0.14.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
