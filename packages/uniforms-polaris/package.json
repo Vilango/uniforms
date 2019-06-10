@@ -30,5 +30,6 @@
     "lodash": "^4.0.0",
     "prop-types": "^15.5.7",
     "uniforms": "^2.0.0-alpha.1"
-  }
+  },
+  "gitHead": "65d1dfa0a208cfe582162f2bad811a337c69b6c0"
 }
