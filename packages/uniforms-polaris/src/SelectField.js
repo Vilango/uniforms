@@ -1,6 +1,7 @@
 import React from 'react';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
+import {Select as SelectPolaris} from '@shopify/polaris';
 
 const xor = (item, array) => {
   const index = array.indexOf(item);
@@ -38,28 +39,26 @@ const renderSelect = ({
   required,
   transform,
   value
-}) => (
-  <select
-    disabled={disabled}
-    id={id}
-    name={name}
-    onChange={event => onChange(event.target.value)}
-    ref={inputRef}
-    value={value}
-  >
-    {(!!placeholder || !required) && (
-      <option value="" disabled={required} hidden={required}>
-        {placeholder ? placeholder : label}
-      </option>
-    )}
+}) => {
+  const options = allowedValues.map(value => ({value, label: transform ? transform(value) : value}));
 
-    {allowedValues.map(value => (
-      <option key={value} value={value}>
-        {transform ? transform(value) : value}
-      </option>
-    ))}
-  </select>
-);
+  if (!!placeholder || !required) {
+    options.unshift({value: '', disabled: required, label: placeholder ? placeholder : label});
+  }
+
+  return (
+    <SelectPolaris
+      disabled={disabled}
+      id={id}
+      name={name}
+      onChange={value => onChange(value)}
+      value={value}
+      options={options}
+      ref={inputRef}
+    />
+  );
+};
+
 const Select = ({
   allowedValues,
   checkboxes,

@@ -1,7 +1,7 @@
 import React from 'react';
 import {mount} from 'enzyme';
 
-import SelectField from 'uniforms-unstyled/SelectField';
+import SelectField from 'uniforms-polaris/SelectField';
 
 import createContext from './_createContext';
 

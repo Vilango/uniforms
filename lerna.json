@@ -6,6 +6,8 @@
     }
   },
   "packages": [
-    "packages/uniforms-polaris"
+    "packages/uniforms-polaris",
+    "packages/uniforms-bridge-simple-schema-2",
+    "packages/uniforms-unstyled"
   ]
 }
