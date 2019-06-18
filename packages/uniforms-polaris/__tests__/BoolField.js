@@ -1,7 +1,7 @@
 import React from 'react';
 import {mount} from 'enzyme';
 
-import BoolField from 'uniforms-unstyled/BoolField';
+import BoolField from 'uniforms-polaris/BoolField';
 
 import createContext from './_createContext';
 
@@ -66,7 +66,7 @@ test('<BoolField> - renders a input with correct value (default)', () => {
   const wrapper = mount(element, createContext({x: {type: Boolean}}));
 
   expect(wrapper.find('input')).toHaveLength(1);
-  expect(wrapper.find('input').prop('checked')).toBe('');
+  expect(wrapper.find('input').prop('checked')).toBe(false);
 });
 
 test('<BoolField> - renders a input with correct value (model)', () => {
