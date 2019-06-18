@@ -17,6 +17,7 @@ const SettingToggle = ({
 }) => (
   <div {...filterDOMProps(props)}>
     <SettingTogglePolaris
+      id={id}
       name={name}
       action={{
         id,
@@ -27,7 +28,9 @@ const SettingToggle = ({
       enabled={value}
       ref={inputRef}
     >
-      {text} <TextStyle variation="strong">{value ? statusContent['true'] : statusContent['false']}</TextStyle>.
+      <label htmlFor={id}>
+        {text} <TextStyle variation="strong">{value ? statusContent['true'] : statusContent['false']}</TextStyle>.
+      </label>
     </SettingTogglePolaris>
   </div>
 );
