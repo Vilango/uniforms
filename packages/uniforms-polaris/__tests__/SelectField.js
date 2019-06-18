@@ -2,137 +2,91 @@ import React from 'react';
 import {mount} from 'enzyme';
 
 import SelectField from 'uniforms-polaris/SelectField';
+import {Select, Checkbox} from '@shopify/polaris';
 
 import createContext from './_createContext';
 
-test('<SelectField> - renders a select', () => {
+test('<SelectField> - renders a Select', () => {
   const element = <SelectField name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
+  expect(wrapper.find(Select)).toHaveLength(1);
 });
 
-test('<SelectField> - renders a select with correct disabled state', () => {
+test('<SelectField> - renders a Select with correct disabled state', () => {
   const element = <SelectField name="x" disabled />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').prop('disabled')).toBe(true);
+  expect(wrapper.find(Select)).toHaveLength(1);
+  expect(wrapper.find(Select).prop('disabled')).toBe(true);
 });
 
-test('<SelectField> - renders a select with correct id (inherited)', () => {
+test('<SelectField> - renders a Select with correct id (inherited)', () => {
   const element = <SelectField name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').prop('id')).toBeTruthy();
+  expect(wrapper.find(Select)).toHaveLength(1);
+  expect(wrapper.find(Select).prop('id')).toBeTruthy();
 });
 
-test('<SelectField> - renders a select with correct id (specified)', () => {
+test('<SelectField> - renders a Select with correct id (specified)', () => {
   const element = <SelectField name="x" id="y" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').prop('id')).toBe('y');
+  expect(wrapper.find(Select)).toHaveLength(1);
+  expect(wrapper.find(Select).prop('id')).toBe('y');
 });
 
-test('<SelectField> - renders a select with correct name', () => {
+test('<SelectField> - renders a Select with correct name', () => {
   const element = <SelectField name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').prop('name')).toBe('x');
+  expect(wrapper.find(Select)).toHaveLength(1);
+  expect(wrapper.find(Select).prop('name')).toBe('x');
 });
 
-test('<SelectField> - renders a select with correct options', () => {
+test('<SelectField> - renders a Select with correct options', () => {
   const element = <SelectField name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').find('option')).toHaveLength(2);
-  expect(
-    wrapper
-      .find('select')
-      .find('option')
-      .at(0)
-      .prop('value')
-  ).toBe('a');
-  expect(
-    wrapper
-      .find('select')
-      .find('option')
-      .at(0)
-      .text()
-  ).toBe('a');
-  expect(
-    wrapper
-      .find('select')
-      .find('option')
-      .at(1)
-      .prop('value')
-  ).toBe('b');
-  expect(
-    wrapper
-      .find('select')
-      .find('option')
-      .at(1)
-      .text()
-  ).toBe('b');
+  expect(wrapper.find(Select)).toHaveLength(1);
+  expect(wrapper.find(Select).prop('options')).toHaveLength(2);
+
+  expect(wrapper.find(Select).prop('options')[0]['value']).toBe('a');
+  expect(wrapper.find(Select).prop('options')[0]['label']).toBe('a');
+  expect(wrapper.find(Select).prop('options')[1]['value']).toBe('b');
+  expect(wrapper.find(Select).prop('options')[1]['label']).toBe('b');
 });
 
-test('<SelectField> - renders a select with correct options (transform)', () => {
+test('<SelectField> - renders a Select with correct options (transform)', () => {
   const element = <SelectField name="x" transform={x => x.toUpperCase()} />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').find('option')).toHaveLength(2);
-  expect(
-    wrapper
-      .find('select')
-      .find('option')
-      .at(0)
-      .prop('value')
-  ).toBe('a');
-  expect(
-    wrapper
-      .find('select')
-      .find('option')
-      .at(0)
-      .text()
-  ).toBe('A');
-  expect(
-    wrapper
-      .find('select')
-      .find('option')
-      .at(1)
-      .prop('value')
-  ).toBe('b');
-  expect(
-    wrapper
-      .find('select')
-      .find('option')
-      .at(1)
-      .text()
-  ).toBe('B');
+  expect(wrapper.find(Select)).toHaveLength(1);
+  expect(wrapper.find(Select).prop('options')).toHaveLength(2);
+
+  expect(wrapper.find(Select).prop('options')[0]['value']).toBe('a');
+  expect(wrapper.find(Select).prop('options')[0]['label']).toBe('A');
+  expect(wrapper.find(Select).prop('options')[1]['value']).toBe('b');
+  expect(wrapper.find(Select).prop('options')[1]['label']).toBe('B');
 });
 
-test('<SelectField> - renders a select with correct placeholder (fallback)', () => {
+test('<SelectField> - renders a Select with correct placeholder (fallback)', () => {
   const element = <SelectField name="x" label="y" placeholder="" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b'], optional: true}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
+  expect(wrapper.find(Select)).toHaveLength(1);
   expect(
     wrapper
-      .find('select')
-      .find('option')
-      .find({value: ''})
-  ).toHaveLength(1);
+      .find(Select)
+      .prop('options')
+      .find(x => x.value === '')
+  ).toBeTruthy();
   expect(
     wrapper
-      .find('select')
-      .find('option')
-      .find({value: ''})
-      .text()
+      .find(Select)
+      .prop('options')
+      .find(x => x.value === '')['label']
   ).toBe('y');
 });
 
@@ -140,69 +94,74 @@ test('<SelectField> - renders a select with correct placeholder (implicit)', () 
   const element = <SelectField name="x" placeholder="y" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
+  expect(wrapper.find(Select)).toHaveLength(1);
   expect(
     wrapper
-      .find('select')
-      .find('option')
-      .find({value: ''})
-  ).toHaveLength(1);
+      .find(Select)
+      .prop('options')
+      .find(x => x.value === '')
+  ).toBeTruthy();
   expect(
     wrapper
-      .find('select')
-      .find('option')
-      .find({value: ''})
-      .text()
+      .find(Select)
+      .prop('options')
+      .find(x => x.value === '')['label']
   ).toBe('y');
 });
 
-test('<SelectField> - renders a select with correct value (default)', () => {
+test('<SelectField> - renders a Select with correct value (default)', () => {
   const element = <SelectField name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').prop('value')).toBe('');
+  expect(wrapper.find(Select)).toHaveLength(1);
+  expect(wrapper.find(Select).prop('value')).toBe('');
 });
 
-test('<SelectField> - renders a select with correct value (model)', () => {
+test('<SelectField> - renders a Select with correct value (model)', () => {
   const element = <SelectField name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}, {model: {x: 'b'}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').prop('value')).toBe('b');
+  expect(wrapper.find(Select)).toHaveLength(1);
+  expect(wrapper.find(Select).prop('value')).toBe('b');
 });
 
-test('<SelectField> - renders a select with correct value (specified)', () => {
+test('<SelectField> - renders a Select with correct value (specified)', () => {
   const element = <SelectField name="x" value="b" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').prop('value')).toBe('b');
+  expect(wrapper.find(Select)).toHaveLength(1);
+  expect(wrapper.find(Select).prop('value')).toBe('b');
 });
 
-test('<SelectField> - renders a select which correctly reacts on change', () => {
+test('<SelectField> - renders a Select which correctly reacts on change', () => {
   const onChange = jest.fn();
 
   const element = <SelectField name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}, {onChange}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').simulate('change', {target: {value: 'b'}})).toBeTruthy();
+  expect(wrapper.find(Select)).toHaveLength(1);
+  wrapper
+    .find(Select)
+    .props()
+    .onChange('b');
   expect(onChange).toHaveBeenLastCalledWith('x', 'b');
 });
 
-test('<SelectField> - renders a select which correctly reacts on change (empty)', () => {
+test('<SelectField> - renders a Select which correctly reacts on change (empty)', () => {
   const onChange = jest.fn();
 
   const element = <SelectField name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}, {onChange}));
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').simulate('change', {target: {value: ''}})).toBeTruthy();
+  expect(wrapper.find(Select)).toHaveLength(1);
+  wrapper
+    .find(Select)
+    .props()
+    .onChange('');
   expect(onChange).toHaveBeenLastCalledWith('x', '');
 });
 
-test('<SelectField> - renders a select which correctly reacts on change (same value)', () => {
+test('<SelectField> - renders a Select which correctly reacts on change (same value)', () => {
   const onChange = jest.fn();
 
   const element = <SelectField name="x" />;
@@ -211,8 +170,11 @@ test('<SelectField> - renders a select which correctly reacts on change (same va
     createContext({x: {type: String, allowedValues: ['a', 'b']}}, {model: {x: 'b'}, onChange})
   );
 
-  expect(wrapper.find('select')).toHaveLength(1);
-  expect(wrapper.find('select').simulate('change', {target: {value: 'b'}})).toBeTruthy();
+  expect(wrapper.find(Select)).toHaveLength(1);
+  wrapper
+    .find(Select)
+    .props()
+    .onChange('b');
   expect(onChange).toHaveBeenLastCalledWith('x', 'b');
 });
 
@@ -250,27 +212,27 @@ test('<SelectField> - renders a wrapper with unknown props', () => {
   ).toBe('z');
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes', () => {
   const element = <SelectField checkboxes name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('input')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes with correct disabled state', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes with correct disabled state', () => {
   const element = <SelectField checkboxes name="x" disabled />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('input')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(0)
       .prop('disabled')
   ).toBe(true);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(1)
       .prop('disabled')
   ).toBe(true);
@@ -280,171 +242,170 @@ test('<SelectField checkboxes> - renders a set of checkboxes with correct id (in
   const element = <SelectField checkboxes name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('input')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(0)
       .prop('id')
   ).toBeTruthy();
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(1)
       .prop('id')
   ).toBeTruthy();
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes with correct id (specified)', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes with correct id (specified)', () => {
   const element = <SelectField checkboxes name="x" id="y" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('input')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(0)
       .prop('id')
   ).toBe('y-a');
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(1)
       .prop('id')
   ).toBe('y-b');
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes with correct name', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes with correct name', () => {
   const element = <SelectField checkboxes name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('input')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(0)
       .prop('name')
   ).toBe('x');
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(1)
       .prop('name')
   ).toBe('x');
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes with correct options', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes with correct options', () => {
   const element = <SelectField checkboxes name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('label')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
   expect(
     wrapper
-      .find('label')
+      .find(Checkbox)
       .at(0)
-      .text()
+      .prop('label')
   ).toBe('a');
   expect(
     wrapper
-      .find('label')
+      .find(Checkbox)
       .at(1)
-      .text()
+      .prop('label')
   ).toBe('b');
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes with correct options (transform)', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes with correct options (transform)', () => {
   const element = <SelectField checkboxes name="x" transform={x => x.toUpperCase()} />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('label')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
   expect(
     wrapper
-      .find('label')
+      .find(Checkbox)
       .at(0)
-      .text()
+      .prop('label')
   ).toBe('A');
   expect(
     wrapper
-      .find('label')
+      .find(Checkbox)
       .at(1)
-      .text()
+      .prop('label')
   ).toBe('B');
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes with correct value (default)', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes with correct value (default)', () => {
   const element = <SelectField checkboxes name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('input')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(0)
       .prop('checked')
   ).toBe(false);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(1)
       .prop('checked')
   ).toBe(false);
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes with correct value (model)', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes with correct value (model)', () => {
   const element = <SelectField checkboxes name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}, {model: {x: 'b'}}));
 
-  expect(wrapper.find('input')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(0)
       .prop('checked')
   ).toBe(false);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(1)
       .prop('checked')
   ).toBe(true);
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes with correct value (specified)', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes with correct value (specified)', () => {
   const element = <SelectField checkboxes name="x" value="b" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}));
 
-  expect(wrapper.find('input')).toHaveLength(2);
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(0)
       .prop('checked')
   ).toBe(false);
   expect(
     wrapper
-      .find('input')
+      .find(Checkbox)
       .at(1)
       .prop('checked')
   ).toBe(true);
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes which correctly reacts on change', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes which correctly reacts on change', () => {
   const onChange = jest.fn();
 
   const element = <SelectField checkboxes name="x" />;
   const wrapper = mount(element, createContext({x: {type: String, allowedValues: ['a', 'b']}}, {onChange}));
 
-  expect(wrapper.find('input')).toHaveLength(2);
-  expect(
-    wrapper
-      .find('input')
-      .at(1)
-      .simulate('change')
-  ).toBeTruthy();
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
+  wrapper
+    .find(Checkbox)
+    .at(1)
+    .props()
+    .onChange();
   expect(onChange).toHaveBeenLastCalledWith('x', 'b');
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes which correctly reacts on change (array check)', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes which correctly reacts on change (array check)', () => {
   const onChange = jest.fn();
 
   const element = <SelectField checkboxes name="x" />;
@@ -453,17 +414,16 @@ test('<SelectField checkboxes> - renders a set of checkboxes which correctly rea
     createContext({x: {type: Array}, 'x.$': {type: String, allowedValues: ['a', 'b']}}, {onChange})
   );
 
-  expect(wrapper.find('input')).toHaveLength(2);
-  expect(
-    wrapper
-      .find('input')
-      .at(1)
-      .simulate('change')
-  ).toBeTruthy();
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
+  wrapper
+    .find(Checkbox)
+    .at(1)
+    .props()
+    .onChange();
   expect(onChange).toHaveBeenLastCalledWith('x', ['b']);
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes which correctly reacts on change (array uncheck)', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes which correctly reacts on change (array uncheck)', () => {
   const onChange = jest.fn();
 
   const element = <SelectField checkboxes name="x" value={['b']} />;
@@ -472,17 +432,16 @@ test('<SelectField checkboxes> - renders a set of checkboxes which correctly rea
     createContext({x: {type: Array}, 'x.$': {type: String, allowedValues: ['a', 'b']}}, {onChange})
   );
 
-  expect(wrapper.find('input')).toHaveLength(2);
-  expect(
-    wrapper
-      .find('input')
-      .at(1)
-      .simulate('change')
-  ).toBeTruthy();
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
+  wrapper
+    .find(Checkbox)
+    .at(1)
+    .props()
+    .onChange();
   expect(onChange).toHaveBeenLastCalledWith('x', []);
 });
 
-test('<SelectField checkboxes> - renders a set of checkboxes which correctly reacts on change (same value)', () => {
+test('<SelectField checkboxes> - renders a set of Checkboxes which correctly reacts on change (same value)', () => {
   const onChange = jest.fn();
 
   const element = <SelectField checkboxes name="x" />;
@@ -491,13 +450,12 @@ test('<SelectField checkboxes> - renders a set of checkboxes which correctly rea
     createContext({x: {type: String, allowedValues: ['a', 'b']}}, {model: {x: 'b'}, onChange})
   );
 
-  expect(wrapper.find('input')).toHaveLength(2);
-  expect(
-    wrapper
-      .find('input')
-      .at(0)
-      .simulate('change')
-  ).toBeTruthy();
+  expect(wrapper.find(Checkbox)).toHaveLength(2);
+  wrapper
+    .find(Checkbox)
+    .at(0)
+    .props()
+    .onChange();
   expect(onChange).toHaveBeenLastCalledWith('x', 'a');
 });
 
