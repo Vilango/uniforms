@@ -19,5 +19,6 @@ export {default as RadioField} from './RadioField';
 export {default as SelectField} from './SelectField';
 export {default as SubmitField} from './SubmitField';
 export {default as TextField} from './TextField';
+export {default as SettingToggleField} from './SettingToggleField';
 export {default as ValidatedForm} from './ValidatedForm';
 export {default as ValidatedQuickForm} from './ValidatedQuickForm';
