@@ -1,7 +1,7 @@
 import React from 'react';
 import connectField from 'uniforms/connectField';
 import filterDOMProps from 'uniforms/filterDOMProps';
-import {Select as SelectPolaris} from '@shopify/polaris';
+import {Select as SelectPolaris, Checkbox} from '@shopify/polaris';
 
 const xor = (item, array) => {
   const index = array.indexOf(item);
@@ -15,18 +15,17 @@ const xor = (item, array) => {
 const renderCheckboxes = ({allowedValues, disabled, fieldType, id, name, onChange, transform, value}) =>
   allowedValues.map(item => (
     <div key={item}>
-      <input
+      <Checkbox
         checked={fieldType === Array ? value.includes(item) : value === item}
         disabled={disabled}
         id={`${id}-${item}`}
         name={name}
+        label={transform ? transform(item) : item}
         onChange={() => onChange(fieldType === Array ? xor(item, value) : item)}
-        type="checkbox"
       />
-
-      <label htmlFor={`${id}-${item}`}>{transform ? transform(item) : item}</label>
     </div>
   ));
+
 const renderSelect = ({
   allowedValues,
   disabled,
@@ -78,7 +77,6 @@ const Select = ({
   <div {...filterDOMProps(props)}>
     {label && <label htmlFor={id}>{label}</label>}
 
-    {/* TODO: Better handling of these props. */}
     {checkboxes || fieldType === Array
       ? renderCheckboxes({allowedValues, disabled, id, name, onChange, transform, value, fieldType})
       : renderSelect({
