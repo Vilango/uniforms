@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0-alpha.3",
+  "version": "2.0.0-alpha.4",
   "command": {
     "exec": {
       "parallel": true
@@ -7,8 +7,8 @@
   },
   "packages": [
     "packages/uniforms",
-    "packages/uniforms-polaris",
     "packages/uniforms-bridge-simple-schema-2",
+    "packages/uniforms-polaris",
     "packages/uniforms-unstyled"
   ]
 }
