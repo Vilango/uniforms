@@ -1,7 +1,7 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 
-import TextField from 'uniforms-unstyled/TextField';
+import TextField from 'uniforms-polaris/TextField';
 
 import createContext from './_createContext';
 
@@ -88,10 +88,10 @@ test('<TextField> - renders an input which correctly reacts on change', () => {
   const onChange = jest.fn();
 
   const element = <TextField name="x" />;
-  const wrapper = mount(element, createContext({x: {type: String}}, {onChange}));
+  const wrapper = shallow(element, createContext({x: {type: String}}, {onChange}));
 
-  expect(wrapper.find('input')).toHaveLength(1);
-  expect(wrapper.find('input').simulate('change', {target: {value: 'y'}})).toBeTruthy();
+  expect(wrapper).toHaveLength(1);
+  expect(wrapper.simulate('change', 'y')).toBeTruthy();
   expect(onChange).toHaveBeenLastCalledWith('x', 'y');
 });
 
@@ -131,22 +131,7 @@ test('<TextField> - renders a wrapper with unknown props', () => {
   const wrapper = mount(element, createContext({x: {type: String}}));
   const field = wrapper.find(TextField);
 
-  expect(
-    field
-      .find('div')
-      .at(0)
-      .prop('data-x')
-  ).toBe('x');
-  expect(
-    field
-      .find('div')
-      .at(0)
-      .prop('data-y')
-  ).toBe('y');
-  expect(
-    field
-      .find('div')
-      .at(0)
-      .prop('data-z')
-  ).toBe('z');
+  expect(field.prop('data-x')).toBe('x');
+  expect(field.prop('data-y')).toBe('y');
+  expect(field.prop('data-z')).toBe('z');
 });

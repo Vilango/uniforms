@@ -7,7 +7,6 @@ const Text = ({
   disabled,
   error,
   errorMessage,
-  helperText,
   inputRef,
   label,
   name,
@@ -18,7 +17,6 @@ const Text = ({
   value,
   ...props
 }) => {
-  // console.log("Text helperText", helperText);
   // console.log("Text", error, errorMessage);
   // console.log("Text", type);
   // console.log("Text.placeholder", !!placeholder, placeholder);
@@ -27,7 +25,6 @@ const Text = ({
     <TextField
       disabled={!!disabled}
       error={error && showInlineError && errorMessage}
-      helpText={helperText}
       label={label}
       name={name}
       onChange={event => disabled || onChange(event)}

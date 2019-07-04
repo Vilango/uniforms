@@ -2,7 +2,7 @@ import React from 'react';
 import {mount} from 'enzyme';
 
 import BoolField from 'uniforms-polaris/BoolField';
-
+import {Checkbox} from '@shopify/polaris';
 import createContext from './_createContext';
 
 test('<BoolField> - renders an input', () => {
@@ -92,7 +92,7 @@ test('<BoolField> - renders a input which correctly reacts on change', () => {
   const wrapper = mount(element, createContext({x: {type: Boolean}}, {onChange}));
 
   expect(wrapper.find('input')).toHaveLength(1);
-  expect(wrapper.find('input').simulate('change')).toBeTruthy();
+  expect(wrapper.find(Checkbox).simulate('click')).toBeTruthy();
   expect(onChange).toHaveBeenLastCalledWith('x', true);
 });
 
@@ -103,19 +103,19 @@ test('<BoolField> - renders a wrapper with unknown props', () => {
 
   expect(
     field
-      .find('div')
+      .find(BoolField)
       .at(0)
       .prop('data-x')
   ).toBe('x');
   expect(
     field
-      .find('div')
+      .find(BoolField)
       .at(0)
       .prop('data-y')
   ).toBe('y');
   expect(
     field
-      .find('div')
+      .find(BoolField)
       .at(0)
       .prop('data-z')
   ).toBe('z');

@@ -20,7 +20,7 @@ export default class AutoField extends BaseField {
 
   render() {
     const props = this.getFieldProps(undefined, {ensureValue: false});
-
+    // console.log("AutoField", props.fieldType);
     if (props.component === undefined) {
       if (props.allowedValues) {
         if (props.checkboxes && props.fieldType !== Array) {
