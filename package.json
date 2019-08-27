@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "lerna exec --ignore website -- babel --config-file ../../.babelrc --out-dir . src",
+    "link": "lerna link",
     "clean": "rimraf coverage packages/*/*.js",
     "coverage": "jest --coverage",
     "coverage:report": "codecov",
