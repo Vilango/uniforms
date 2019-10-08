@@ -25,12 +25,11 @@ const SettingToggle = ({
         onAction: () => onChange(!value),
         disabled
       }}
-      enabled={value}
       ref={inputRef}
     >
-      <label htmlFor={id}>
+      <p data-testid={`paragraph-${id || ''}`}>
         {text} <TextStyle variation="strong">{value ? statusContent['true'] : statusContent['false']}</TextStyle>.
-      </label>
+      </p>
     </SettingTogglePolaris>
   </div>
 );
