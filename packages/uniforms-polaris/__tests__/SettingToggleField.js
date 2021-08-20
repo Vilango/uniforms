@@ -1,8 +1,12 @@
 import React from 'react';
 import {mount} from 'enzyme';
+import {render, fireEvent, cleanup} from '@testing-library/react';
+
+import createSchema from './_createSchema';
 
 import SettingToggleField from 'uniforms-polaris/SettingToggleField';
-import {SettingToggle, Button, TextStyle} from '@shopify/polaris';
+import {SettingToggle, Button, TextStyle, AppProvider} from '@shopify/polaris';
+import AutoForm from 'uniforms-unstyled/AutoForm';
 
 import createContext from './_createContext';
 
@@ -118,4 +122,79 @@ test('<SettingToggleField> - renders a SettingToggle which correctly reacts on c
     .prop('action')
     .onAction();
   expect(onChange).toHaveBeenCalled();
+});
+
+beforeEach(cleanup);
+
+test('<SettingToggleField> - test with react-testing-library', () => {
+  const actionContent = {true: 'Disable', false: 'Enable'};
+  const statusContent = {true: 'enabled', false: 'disabled'};
+  const text = 'This setting is';
+  const buttonId = 'SettingToggle';
+
+  const attributeName = 'x';
+
+  const {container, getByText} = render(
+    <AppProvider>
+      <AutoForm schema={createSchema({[attributeName]: {type: Boolean}})}>
+        <SettingToggleField
+          name={attributeName}
+          id={buttonId}
+          actionContent={actionContent}
+          statusContent={statusContent}
+          text={text}
+        />
+      </AutoForm>
+    </AppProvider>
+  );
+
+  const getButton = elementId => container.querySelector(`#${elementId}`);
+  let button = getButton(buttonId);
+
+  expect(getByText(statusContent.false)).toBeDefined();
+  expect(getByText(actionContent.false)).toBeDefined();
+
+  // First click
+  fireEvent.click(button, {button: 0});
+
+  button = getButton(buttonId);
+  expect(getByText(statusContent.true)).toBeDefined();
+  expect(getByText(actionContent.true)).toBeDefined();
+
+  // Second click
+  fireEvent.click(button, {button: 0});
+
+  expect(getByText(statusContent.false)).toBeDefined();
+  expect(getByText(actionContent.false)).toBeDefined();
+});
+
+test('<SettingToggleField> - test with react-testing-library', () => {
+  const actionContent = {true: 'Disable', false: 'Enable'};
+  const statusContent = {true: 'enabled', false: 'disabled'};
+  const text = 'This setting is';
+  const buttonId = 'SettingToggle';
+
+  const attributeName = 'x';
+
+  const {getByText, getByTestId} = render(
+    <AppProvider>
+      <AutoForm schema={createSchema({[attributeName]: {type: Boolean}})}>
+        <SettingToggleField
+          name={attributeName}
+          id={buttonId}
+          actionContent={actionContent}
+          statusContent={statusContent}
+          text={text}
+        />
+      </AutoForm>
+    </AppProvider>
+  );
+
+  expect(getByText(statusContent.false)).toBeDefined();
+  expect(getByText(actionContent.false)).toBeDefined();
+
+  fireEvent.click(getByTestId(`paragraph-${buttonId}`));
+
+  expect(getByText(statusContent.false)).toBeDefined();
+  expect(getByText(actionContent.false)).toBeDefined();
 });
