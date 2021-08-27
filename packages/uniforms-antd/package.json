@@ -1,11 +1,19 @@
 {
   "name": "uniforms-antd",
-  "version": "2.0.0-alpha.1",
+  "version": "3.5.5",
   "license": "MIT",
-  "main": "index.js",
+  "main": "./es5/index.js",
+  "module": "./esm/index.js",
+  "sideEffects": [
+    "es5/wrapField.js",
+    "esm/wrapField.js",
+    "es6/wrapField.js",
+    "src/wrapField.tsx"
+  ],
   "description": "Ant Design UI components for uniforms.",
   "repository": "https://github.com/vazco/uniforms/tree/master/packages/uniforms-antd",
   "bugs": "https://github.com/vazco/uniforms/issues",
+  "funding": "https://github.com/vazco/uniforms?sponsor=1",
   "keywords": [
     "antd",
     "form",
@@ -17,19 +25,25 @@
     "validation"
   ],
   "files": [
-    "*.js",
-    "src/"
+    "es5/*.d.ts",
+    "es5/*.js",
+    "esm/*.d.ts",
+    "esm/*.js",
+    "es6/*.d.ts",
+    "es6/*.js",
+    "src/*.ts",
+    "src/*.tsx"
   ],
   "peerDependencies": {
-    "antd": "^3.0.0 || ^2.7.0",
-    "react": "^16.0.0 || ^15.0.0 || ^0.14.0"
+    "@ant-design/icons": "^4.0.0",
+    "antd": "^4.0.0",
+    "react": "^17.0.0 || ^16.8.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
     "invariant": "^2.0.0",
     "lodash": "^4.0.0",
-    "prop-types": "^15.5.7",
-    "uniforms": "^2.0.0-alpha.1",
+    "tslib": "^2.2.0",
+    "uniforms": "^3.5.5",
     "warning": "^4.0.0"
   }
 }

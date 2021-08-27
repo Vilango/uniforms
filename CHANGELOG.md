@@ -1,3 +1,283 @@
+## [v3.5.5](https://github.com/vazco/uniforms/tree/v3.5.5) (2021-08-13)
+
+- **Fixed:** Types of `DateField`, `LongTextField`, `NumField`, and `TextField` in `uniforms-material` are now correctly based on `TextFieldProps`. [\#987](https://github.com/vazco/uniforms/issues/987)
+
+## [v3.5.4](https://github.com/vazco/uniforms/tree/v3.5.4) (2021-08-05)
+
+- **Fixed:** Invalid publish occurred. Sorry!
+
+## [v3.5.3](https://github.com/vazco/uniforms/tree/v3.5.3) (2021-08-05)
+
+- **Fixed:** All package paths in `package.json` are now relative. [\#992](https://github.com/vazco/uniforms/issues/992)
+
+## [v3.5.2](https://github.com/vazco/uniforms/tree/v3.5.2) (2021-07-30)
+
+- **Fixed:** All bridge methods are now unified between bridges. [\#957](https://github.com/vazco/uniforms/issues/957)
+- **Fixed:** Incorrect `module` usage in `package.json`. None of the uniforms packages requires special Babel handling anymore (e.g., `meteor.nodeModules.recompile` in Meteor). [\#986](https://github.com/vazco/uniforms/issues/986)
+- **Fixed:** `FieldProps` problems with type unions. [\#971](https://github.com/vazco/uniforms/issues/971)
+- **Optimized:** The `JSONSchemaBridge` is now much faster. [\#957](https://github.com/vazco/uniforms/issues/957)
+
+## [v3.5.1](https://github.com/vazco/uniforms/tree/v3.5.1) (2021-05-17)
+
+- **Fixed:** Incorrect label placing of `DateField` in `uniforms-material`. [\#961](https://github.com/vazco/uniforms/issues/961)
+- **Fixed:** Incorrect `null` handling in `getErrorMessages` in `GraphQLSchemaBridge`. [\#950](https://github.com/vazco/uniforms/issues/950)
+
+## [v3.5.0](https://github.com/vazco/uniforms/tree/v3.5.0) (2021-05-12)
+
+- **Changed:** Bumped minimal required version of `tslib` to 2.2.0. [\#949](https://github.com/vazco/uniforms/issues/949)
+- **Fixed:** Handling of `object` fields with no `properties` in `JSONSchemaBridge`. [\#934](https://github.com/vazco/uniforms/issues/934)
+- **Fixed:** Simplified typings of all field components. [\#949](https://github.com/vazco/uniforms/pull/949)
+- **Fixed:** TypeScript error in `uniforms-bootstrap4`. [\#904](https://github.com/vazco/uniforms/pull/904)
+- **Optimized:** The `changedKeys` helper. [\#953](https://github.com/vazco/uniforms/pull/953)
+
+## [v3.4.0](https://github.com/vazco/uniforms/tree/v3.4.0) (2021-04-23)
+
+- **Added:** Ajv v8 support in `JSONSchemaBridge`. [\#923](https://github.com/vazco/uniforms/issues/923)
+- **Added:** New `showInlineError` on `AutoFields`. [\#827](https://github.com/vazco/uniforms/issues/827)
+- **Added:** Success styling in all Bootstrap themes. [\#899](https://github.com/vazco/uniforms/issues/899)
+- **Fixed:** Handling of more `anyOf` cases in `JSONSchemaBridge`. [\#919](https://github.com/vazco/uniforms/issues/919)
+- **Fixed:** Leaking `setTimeout` of `BaseForm`. [\#920](https://github.com/vazco/uniforms/issues/920)
+- **Optimized:** The `filterDOMProps` helper. [\#939](https://github.com/vazco/uniforms/pull/939)
+- **Optimized:** The `joinName` helper. [\#935](https://github.com/vazco/uniforms/pull/935)
+
+## [v3.3.0](https://github.com/vazco/uniforms/tree/v3.3.0) (2021-03-31)
+
+- **Added:** Compatibility with React v17. [\#859](https://github.com/vazco/uniforms/issues/859)
+- **Added:** New context property: `submitted`. [\#889](https://github.com/vazco/uniforms/issues/889)
+- **Added:** New theme: `uniforms-bootstrap5`. [\#874](https://github.com/vazco/uniforms/issues/874)
+- **Fixed:** Accessibility problems in many components. [\#867](https://github.com/vazco/uniforms/issues/867)
+- **Fixed:** Handling of `initialCount` in optional list fields. [\#875](https://github.com/vazco/uniforms/issues/875)
+- **Fixed:** Handling of `JSONSchemaBridge` errors with top-level fields containing spaces. [\#909](https://github.com/vazco/uniforms/issues/909)
+
+## [v3.2.1](https://github.com/vazco/uniforms/tree/v3.2.1) (2021-03-10)
+
+- **Fixed:** Incorrect typings of some functions as methods. [\#887](https://github.com/vazco/uniforms/issues/887)
+- **Fixed:** Invalid `sideEffect` configuration in `uniforms-bridge-simple-schema` and `uniforms-bridge-simple-schema-2`. [\#888](https://github.com/vazco/uniforms/issues/888)
+- **Fixed:** Styling of `SelectField` in `uniforms-semantic`. [\#873](https://github.com/vazco/uniforms/issues/873)
+
+## [v3.2.0](https://github.com/vazco/uniforms/tree/v3.2.0) (2021-02-17)
+
+- **Added:** Error styling to `ListField` in `uniforms-antd`. [\#844](https://github.com/vazco/uniforms/issues/844)
+- **Added:** New `layout` prop in `BaseForm` in `uniforms-antd` to match AntD capabilities. [\#861](https://github.com/vazco/uniforms/issues/861)
+- **Added:** The [`sideEffects`](https://webpack.js.org/guides/tree-shaking/) flag to let bundlers do better at tree shaking. [\#843](https://github.com/vazco/uniforms/issues/843)
+
+## [v3.1.0](https://github.com/vazco/uniforms/tree/v3.1.0) (2021-02-03)
+
+- **Added:** New `readOnly` prop in all form and field components. [\#674](https://github.com/vazco/uniforms/issues/674)
+- **Added:** Replacable `AutoField` component. [\#640](https://github.com/vazco/uniforms/issues/640)
+- **Added:** Support for HTML multiselects in `SelectField` prop in all themes. [\#737](https://github.com/vazco/uniforms/issues/737)
+
+## [v3.0.1](https://github.com/vazco/uniforms/tree/v3.0.1) (2021-01-28)
+
+- **Fixed:** Missing `step` prop in `NumField` in `uniforms-material`. [\#855](https://github.com/vazco/uniforms/issues/855)
+- **Fixed:** Unified `NumField` behavior across themes. [\#856](https://github.com/vazco/uniforms/issues/856)
+
+## [v3.0.0](https://github.com/vazco/uniforms/tree/v3.0.0) (2021-01-14)
+
+## [v3.0.0-rc.8](https://github.com/vazco/uniforms/tree/v3.0.0-rc.8) (2020-12-05)
+
+- **Breaking:** Due to synchronization of `AutoForm` `model`, autosave is now **always** asynchronous. [\#832](https://github.com/vazco/uniforms/issues/832)
+- **Added:** The `row` for `RadioField` in `uniforms-material`. [\#834](https://github.com/vazco/uniforms/issues/834)
+
+## [v3.0.0-rc.7](https://github.com/vazco/uniforms/tree/v3.0.0-rc.7) (2020-11-30)
+
+- **Breaking:** Synchronous `return` and `throw` in `onSubmit` are no longer allowed. To return an error or some result, return `Promise` instead. [\#819](https://github.com/vazco/uniforms/issues/819)
+- **Fixed:** Reverted some `filterDOMProps.register` calls added in [\#803](https://github.com/vazco/uniforms/issues/803). [\#815](https://github.com/vazco/uniforms/issues/815)
+
+## [v3.0.0-rc.6](https://github.com/vazco/uniforms/tree/v3.0.0-rc.6) (2020-10-26)
+
+- **Added:** The `autoComplete` prop is now correctly used in `TextField`. [\#809](https://github.com/vazco/uniforms/issues/809)
+- **Added:** The `validateStatus` prop is now correctly handled in `wrapField` in `uniforms-antd`. [\#817](https://github.com/vazco/uniforms/issues/817)
+- **Fixed:** Regression of accepting non-string labels in `useField` and `connectField`. [\#816](https://github.com/vazco/uniforms/issues/816)
+
+## [v3.0.0-rc.5](https://github.com/vazco/uniforms/tree/v3.0.0-rc.5) (2020-09-30)
+
+- **Added:** New `disableItem` prop in `SelectField`. [\#736](https://github.com/vazco/uniforms/issues/736)
+- **Added:** New `textFieldProps` prop in `SelectField` in `uniforms-material`. [\#700](https://github.com/vazco/uniforms/issues/700)
+
+## [v3.0.0-rc.4](https://github.com/vazco/uniforms/tree/v3.0.0-rc.4) (2020-09-09)
+
+- **Breaking:** Reworked `GraphQLBridge.getField`. [\#769](https://github.com/vazco/uniforms/issues/769)
+- **Added:** More JSON Schema properties are handled automatically in `JSONSchemaBridge`. [\#748](https://github.com/vazco/uniforms/issues/748)
+- **Fixed:** Missing props of `SelectField` in `uniforms-bootstrap4`. [\#785](https://github.com/vazco/uniforms/issues/785), [\#793](https://github.com/vazco/uniforms/issues/793)
+
+## [v3.0.0-rc.3](https://github.com/vazco/uniforms/tree/v3.0.0-rc.3) (2020-08-13)
+
+- **Breaking:** Minimum `graphql` version for `uniforms-bridge-graphql` is now `15.0.0`. [\#781](https://github.com/vazco/uniforms/issues/781)
+- **Fixed:** Styling mismatch in some `uniforms-antd` fields. [\#773](https://github.com/vazco/uniforms/issues/773)
+
+## [v3.0.0-rc.2](https://github.com/vazco/uniforms/tree/v3.0.0-rc.2) (2020-07-30)
+
+- **Fixed:** Fixed inferred type in `ListItemField`.
+
+## [v3.0.0-rc.1](https://github.com/vazco/uniforms/tree/v3.0.0-rc.1) (2020-07-29)
+
+- **Fixed:** Delay in `AutoForm` validation. [\#769](https://github.com/vazco/uniforms/issues/769)
+
+## [v3.0.0-rc.0](https://github.com/vazco/uniforms/tree/v3.0.0-rc.0) (2020-07-15)
+
+- **Breaking:** Minimum `antd` version for `uniforms-antd` is `4.0.0`. [\#696](https://github.com/vazco/uniforms/issues/696)
+- **Breaking:** Minimum `@material-ui/core` version for `uniforms-material` is `4.0.0`. [\#758](https://github.com/vazco/uniforms/issues/758)
+- **Added:** New `FieldProps` and `HTMLFieldProps` utility types. [\#760](https://github.com/vazco/uniforms/issues/760)
+- **Added:** Improved typing of `filterDOMProps`. To properly register a new property, extend `FilterDOMProps` interface. [\#763](https://github.com/vazco/uniforms/issues/763)
+
+  ```tsx
+  declare module 'uniforms' {
+    interface FilterDOMProps {
+      customPropToFilter: never;
+    }
+  }
+
+  filterDOMProps.register('customPropToFilter');
+  ```
+
+- **Fixed:** Escaping special characters. [\#753](https://github.com/vazco/uniforms/issues/753)
+- **Fixed:** Changed state of `AutoForm` regression. [\#765](https://github.com/vazco/uniforms/issues/765)
+
+## [v3.0.0-alpha.5](https://github.com/vazco/uniforms/tree/v3.0.0-alpha.5) (2020-06-17)
+
+- **Breaking:** Removed `modelSync` from `AutoForm` state. [\#739](https://github.com/vazco/uniforms/issues/739)
+- **Added:** New `kind: 'leaf' | 'node'` flag for `connectField`. [\#741](https://github.com/vazco/uniforms/issues/741)
+
+## [v2.6.9](https://github.com/vazco/uniforms/tree/v2.6.9) (2020-06-17)
+
+- **Fixed:** Resolving parallel `properties` and `required` in `JSONSchemaBridge`. [\#746](https://github.com/vazco/uniforms/issues/746)
+
+## [v3.0.0-alpha.4](https://github.com/vazco/uniforms/tree/v3.0.0-alpha.4) (2020-06-03)
+
+- **Breaking:** Removed `injectName` helper. It was used to force context updates and got replaced by the new context directly. [\#720](https://github.com/vazco/uniforms/issues/720)
+- **Breaking:** Removed `includeInChain` option of `connectField`. [\#738](https://github.com/vazco/uniforms/issues/738)
+- **Breaking:** Reworked `ListField` components family. [\#721](https://github.com/vazco/uniforms/issues/721)
+
+## [v2.6.8](https://github.com/vazco/uniforms/tree/v2.6.8) (2020-06-03)
+
+- **Fixed:** Resolving some `$ref`s in `JSONSchemaBridge`. [\#722](https://github.com/vazco/uniforms/issues/722)
+
+## [v3.0.0-alpha.3](https://github.com/vazco/uniforms/tree/v3.0.0-alpha.3) (2020-05-06)
+
+- **Breaking:** Removed `BaseForm.getChangedKeys`. Use `changedKeys` directly.
+- **Breaking:** Removed default exports in the `uniforms` package. Use named imports instead (e.g. `import { BaseForm } from 'uniforms'`). This allows to effectively export types along with values.
+- **Breaking:** Removed `createSchemaBridge`. This includes removal of `BaseForm.state.bridge`, `check` on all bridges, and the automatic bridge creation for SimpleSchema. For motivation and more insigths see [\#718](https://github.com/vazco/uniforms/issues/718).
+- **Breaking:** Reworked validation flow. For motivation and more insigths see [\#711](https://github.com/vazco/uniforms/issues/711).
+  - Bridge validators can be asynchronous.
+  - Bridge validators have to return errors instead of throwing them.
+  - `onValidate` is no longer using callbacks. The error (or the lack of it) has to be returned either synchronously or asynchronously (i.e. wrapped in a promise).
+  - `onSubmitSuccess` and `onSubmitFailure` got removed. To preserve the current behavior, simply combine them into the `onSubmit`:
+  ```diff
+  -onSubmit={onSubmit}
+  -onSubmitSuccess={onSubmitSuccess}
+  -onSubmitFailure={onSubmitFailure}
+  +onSubmit={model => {
+  +  const result = onSubmit(model);
+  +  result.then(onSubmitSuccess, onSubmitFailure);
+  +  return result;
+  +}}`
+  ```
+- **Changed:** For performance reasons `getField`, `getSubfields`, and `getType` of all bridges are now memoized.
+- **Changed:** For performance reasons `filterDOMProps.registered` is now `readonly string[]` instead of `string[]`. Internally, `omit` got replaced with `pickBy` and `filterDOMProps.registered` is now sorted. `filterDOMProps.register` behavior remains unchanged.
+
+## [v3.0.0-alpha.2](https://github.com/vazco/uniforms/tree/v3.0.0-alpha.2) (2020-04-08)
+
+- **Breaking:** Moved transpiled files from the packages roots (e.g. `import BaseForm from 'uniforms/BaseForm'`) to `es5` directories. Try not to rely on that and use let your bundler do its best (e.g. `import { BaseForm } from 'uniforms'`).
+- **Breaking:** Removed `BaseField` from `uniforms`. Migrate to `useField`.
+- **Breaking:** Removed `baseField` from `connectField`. Migrate to `useField`.
+- **Breaking:** Removed `ensureValue` from `connectField`. You have to do it manually (e.g. do `value ?? ''` instead of `value`).
+- **Breaking:** Removed `includeParent` from `connectField`. Use `useField` as many types as needed.
+- **Breaking:** Removed `mapProps` from `uniforms`. Migrate to `useField`.
+- **Breaking:** Shape of the context changed - `changed`, `changedMap`, `submitting`, and `validating` were lifted from `state` to the root.
+- **Breaking:** A lot of types changed.
+- **Added:** `useField` and `useForm` in `uniforms`.
+
+## [v2.6.7](https://github.com/vazco/uniforms/tree/v2.6.7) (2020-03-25)
+
+- **Fixed:** Empty boxes in `SelectField` in `uniforms-antd`. [\#691](https://github.com/vazco/uniforms/issues/691)
+- **Fixed:** Mitigated [babel/babel\#10693](https://github.com/babel/babel/issues/10693) in all remaining cases. [\#692](https://github.com/vazco/uniforms/issues/692)
+
+## [v3.0.0-alpha.1](https://github.com/vazco/uniforms/tree/v3.0.0-alpha.1) (2020-01-22)
+
+- **Breaking:** Removed deprecated lifecycle methods in favor of the new ones. It may break custom form components using `componentWillReceiveProps` and `componentWillMount`.
+
+## [v2.6.6](https://github.com/vazco/uniforms/tree/v2.6.6) (2020-01-22)
+
+- **Fixed:** Mitigated [babel/babel\#10693](https://github.com/babel/babel/issues/10693). [\#638](https://github.com/vazco/uniforms/issues/638)
+
+## [v2.6.5](https://github.com/vazco/uniforms/tree/v2.6.5) (2019-12-18)
+
+- **Fixed:** Invalid publish occurred. Sorry!
+
+## [v2.6.4](https://github.com/vazco/uniforms/tree/v2.6.4) (2019-12-18)
+
+- **Fixed:** Problems with unescaped `id` attributes. [\#671](https://github.com/vazco/uniforms/issues/671)
+
+## [v2.6.3](https://github.com/vazco/uniforms/tree/v2.6.3) (2019-12-11)
+
+- **Fixed:** Problems with `initialCount` and `minCount` in `GraphQLBridge`, `SimpleSchemaBridge` and `SimpleSchema2Bridge`. [\#656](https://github.com/vazco/uniforms/issues/656)
+- **Fixed:** Problems with incorrectly inferred types of some props. [\#661](https://github.com/vazco/uniforms/issues/661)
+
+## [v3.0.0-alpha.0](https://github.com/vazco/uniforms/tree/v3.0.0-alpha.0) (2019-11-30)
+
+- **Breaking:** Migrated from the legacy context API. This change should be transparent for `connectField` but will break all components using context directly. As there's no documentation yet, see [this](https://github.com/vazco/uniforms/commit/1ec3b5393ad59890cadcdf96c0cf2cab90b8164f) commit to see what changed. To have an idea on how to proceed, see [this](https://github.com/vazco/uniforms/commit/46174f5507268db760fc1eef9f4fd43cb3760916) commit.
+- **Breaking:** Raised minimum version of React to 16.8.0.
+- **Breaking:** Removed workaround for React < 16 in `NumField`.
+- **Breaking:** Removed `nothing` from `uniforms` as it's not needed in React >= 15.
+- **Changed:** Removed `prop-types` entirely in favor of incoming typings.
+- **Changed:** Renamed deprecated lifecycle methods.
+
+## [v2.6.2](https://github.com/vazco/uniforms/tree/v2.6.2) (2019-11-21)
+
+- **Changed:** Fixed minimal required version of `tslib`. [\#648](https://github.com/vazco/uniforms/issues/648)
+
+## [v2.6.1](https://github.com/vazco/uniforms/tree/v2.6.1) (2019-11-13)
+
+- **Changed:** Reverted introduction of `globalThis`. [\#641](https://github.com/vazco/uniforms/issues/641)
+
+## [v2.6.0](https://github.com/vazco/uniforms/tree/v2.6.0) (2019-11-06)
+
+- **Added:** ES6 compilation targets and `module` keyword in `package.json`. If your bundler supports tree shaking, you no longer have to use direct imports manually - simply use `import { X } from 'uniforms'`. [\#612](https://github.com/vazco/uniforms/issues/612)
+- **Changed:** Internal structure of imports to stay in align with the ES5/ES6 bundles. [\#629](https://github.com/vazco/uniforms/issues/629)
+- **Fixed:** Handling of default props of `NumField` in `uniforms-material`. [\#631](https://github.com/vazco/uniforms/issues/631).
+- **Fixed:** Missing `wrapField` export in `uniforms-material`. [\#629](https://github.com/vazco/uniforms/issues/629).
+
+## [v2.5.0](https://github.com/vazco/uniforms/tree/v2.5.0) (2019-10-16)
+
+- **Changed:** We've migrated to TypeScript! There should be no impact on plain JavaScript code and the runtime. We are still working on proper (not `any`) typings.
+
+## [v2.4.1](https://github.com/vazco/uniforms/tree/v2.4.1) (2019-10-02)
+
+- **Fixed:** Name conflict of `type` in `JSONSchemaBridge`. [\#604](https://github.com/vazco/uniforms/issues/604)
+- **Fixed:** Parsing of `dataPath` in `JSONSchemaBridge`. [\#593](https://github.com/vazco/uniforms/issues/593)
+
+## [v2.4.0](https://github.com/vazco/uniforms/tree/v2.4.0) (2019-08-28)
+
+- **Added:** Default labels in `GraphQLSchemaBridge`. [\#577](https://github.com/vazco/uniforms/issues/577)
+- **Added:** Handling of `placeholder` and `label` in `JSONSchemaBridge`. [\#586](https://github.com/vazco/uniforms/issues/586)
+- **Fixed:** Unified logic of `getProps` between all bridges. Right now it has a clear semantic: `bridge.getProps(fieldName[, props])` should resolve all props that the schema defines, based on the field definition and given props (if applicable). Especially, it should **not** merge in given `props` nor resolve the final `label` or `placeholder` - `BaseField` handles that. It'll affect you only if you've called `getProps` directly. It also got rid of some additional `undefined` props in `JSONSchemaBridge`.
+
+## [v2.3.1](https://github.com/vazco/uniforms/tree/v2.3.1) (2019-08-14)
+
+- **Fixed:** Handling of `default` attribute in `JSONSchemaBridge`. [\#569](https://github.com/vazco/uniforms/issues/569)
+- **Fixed:** Handling of `placeholder` and `required` props in most themes. [\#570](https://github.com/vazco/uniforms/issues/570)
+- **Fixed:** Rendering placeholder in `SelectField` in `uniforms-antd`. [\#568](https://github.com/vazco/uniforms/issues/568)
+
+## [v2.3.0](https://github.com/vazco/uniforms/tree/v2.3.0) (2019-08-01)
+
+- **Added:** Default exports in bridge packages. [\#562](https://github.com/vazco/uniforms/issues/562)
+- **Added:** Support for `extra` and `help` in `uniforms-antd` theme. [\#559](https://github.com/vazco/uniforms/issues/559)
+- **Fixed:** Conditional wrapper of `NumFields` in most themes is now React version specific. [\#558](https://github.com/vazco/uniforms/issues/558)
+- **Fixed:** Deprecated icon in `BoolField` in `uniforms-antd`. [\#563](https://github.com/vazco/uniforms/issues/563)
+
+## [v2.2.0](https://github.com/vazco/uniforms/tree/v2.2.0) (2019-07-12)
+
+- **Added:** Support for `labelClassName` in `uniforms-bootstrap3` and `uniforms-bootstrap4` themes. [\#548](https://github.com/vazco/uniforms/issues/548)
+- **Fixed:** Handling of `required` validation in `JSONSchemaBridge`. [\#554](https://github.com/vazco/uniforms/issues/554)
+- **Fixed:** Weird behaviour of `SelectField` with `checkboxes` in `uniforms-antd`. [\#549](https://github.com/vazco/uniforms/issues/549)
+
+## [v2.1.0](https://github.com/vazco/uniforms/tree/v2.1.0) (2019-06-18)
+
+- **Added:** Support for `@material-ui/core@4`. [\#542](https://github.com/vazco/uniforms/issues/542)
+
+## [v2.0.0](https://github.com/vazco/uniforms/tree/v2.0.0) (2019-06-10)
+
 ## [v2.0.0-alpha.1](https://github.com/vazco/uniforms/tree/v2.0.0-alpha.1) (2019-05-16)
 
 - **Fixed:** Nested arrays in `GraphQLBridge`. [\#535](https://github.com/vazco/uniforms/issues/535)
@@ -18,29 +298,29 @@
 
   ```diff
   // GraphQL
-  -import {GraphQLBridge} from 'uniforms';
-  +import {GraphQLBridge} from 'uniforms-bridge-graphql';
+  -import { GraphQLBridge } from 'uniforms';
+  +import { GraphQLBridge } from 'uniforms-bridge-graphql';
 
   -import GraphQLBridge from 'uniforms/GraphQLBridge';
   +import GraphQLBridge from 'uniforms-bridge-graphql/GraphQLBridge';
 
   // JSON Schema
-  -import {JSONSchemaBridge} from 'uniforms';
-  +import {JSONSchemaBridge} from 'uniforms-bridge-graphql';
+  -import { JSONSchemaBridge } from 'uniforms';
+  +import { JSONSchemaBridge } from 'uniforms-bridge-graphql';
 
   -import JSONSchemaBridge from 'uniforms/JSONSchemaBridge';
   +import JSONSchemaBridge from 'uniforms-bridge-json-schema/JSONSchemaBridge';
 
   // SimpleSchema (Atmosphere version for Meteor)
-  -import {SimpleSchemaBridge} from 'uniforms';
-  +import {SimpleSchemaBridge} from 'uniforms-bridge-simple-schema';
+  -import { SimpleSchemaBridge } from 'uniforms';
+  +import { SimpleSchemaBridge } from 'uniforms-bridge-simple-schema';
 
   -import SimpleSchemaBridge from 'uniforms/SimpleSchemaBridge';
   +import SimpleSchemaBridge from 'uniforms-bridge-simple-schema/SimpleSchemaBridge';
 
   // SimpleSchema (npm version)
-  -import {SimpleSchema2Bridge} from 'uniforms';
-  +import {SimpleSchema2Bridge} from 'uniforms-bridge-simple-schema-2';
+  -import { SimpleSchema2Bridge } from 'uniforms';
+  +import { SimpleSchema2Bridge } from 'uniforms-bridge-simple-schema-2';
 
   -import SimpleSchema2Bridge from 'uniforms/SimpleSchema2Bridge';
   +import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2/SimpleSchema2Bridge';

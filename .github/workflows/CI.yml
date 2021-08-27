@@ -1,0 +1,50 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 16.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2.2.0
+        with:
+          cache: npm
+          node-version: ${{ matrix.node-version }}
+      - name: Check dependency vulnerabilities
+        run: |
+          npm audit fix || true # skip non-0 exit
+          git status -s | grep " M package-lock.json" && echo "::"warning file=package-lock.json"::"Found vulnerabilities in the project dependencies. Run npm audit to show the audit details. More info: https://docs.npmjs.com/cli/v7/commands/npm-audit
+          git reset --hard HEAD
+      - name: Check dependency duplications
+        run: |
+          npm dedupe
+          git status -s | grep " M package-lock.json" && echo "::"warning file=package-lock.json"::"Duplicate dependencies found. Run npm dedupe to remove them, or add --dry-run parameter to get more info.
+          git reset --hard HEAD
+      - name: Install
+        run: npm i -g npm@7 && npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm run coverage -- --no-cache --runInBand
+      - name: Report coverage
+        uses: codecov/codecov-action@v1.5.2
+      - name: Build docs
+        run: npm --prefix website run build
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.node-version == '16.x'
+      - name: Deploy docs
+        uses: peaceiris/actions-gh-pages@v3.8.0
+        with:
+          allow_empty_commit: true
+          cname: uniforms.tools
+          force_orphan: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./website/build
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.node-version == '16.x'

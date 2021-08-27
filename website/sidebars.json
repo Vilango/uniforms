@@ -1,28 +1,27 @@
 {
   "docs": {
-    "Getting Started": [
-      "installation",
-      "quick-start",
-      "overview",
-      "examples"
+    "Introduction": ["what-are-uniforms", "motivation", "compare-matrix"],
+    "Getting Started": ["installation", "faq", "migrating-2-to-3"],
+    "Tutorials": [
+      "tutorials-basic-uniforms-usage",
+      "tutorials-customizing-your-form-layout",
+      "tutorials-using-predefined-fields",
+      "tutorials-creating-custom-field",
+      "tutorials-creating-custom-theme"
     ],
-    "Bridges": [
-      "bridges-concept",
-      "bridges-graphql",
-      "bridges-json-schema",
-      "bridges-simple-schema",
-      "bridges-simple-schema-2"
-    ],
-    "Uncategorized": [
-      "uncategorized-context-data",
-      "uncategorized-fields",
-      "uncategorized-forms"
+    "Examples": [
+      "examples-common-forms",
+      "examples-custom-fields",
+      "examples-custom-bridge",
+      "examples-custom-form"
     ],
     "API Reference": [
-      "api-bridges",
-      "api-fields",
       "api-forms",
+      "api-fields",
+      "api-bridges",
+      "api-context-data",
       "api-helpers"
-    ]
+    ],
+    "Under The Hood": ["uth-autofield-algorithm", "uth-bridge-concept"]
   }
 }
