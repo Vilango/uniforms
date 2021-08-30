@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { ComponentType, createElement } from 'react';
 import { useForm } from 'uniforms';
 

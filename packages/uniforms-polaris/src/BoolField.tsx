@@ -1,10 +1,9 @@
-// @ts-nocheck
 import React, { Ref } from 'react';
 import { connectField } from 'uniforms';
 import { filterDOMProps } from 'uniforms';
 import { Checkbox } from '@shopify/polaris';
 
-type BoolProps = {
+export type BoolFieldProps = {
   disabled: boolean;
   id: string;
   inputRef: Ref<typeof Checkbox | any>;
@@ -30,7 +29,7 @@ const Bool = ({
   errorMessage,
   showInlineError,
   ...props
-}: BoolProps) => {
+}: BoolFieldProps) => {
   // console.log('Bool', filterDOMProps(props));
   return (
     <Checkbox
@@ -46,4 +45,4 @@ const Bool = ({
     />
   );
 };
-export default connectField<BoolProps>(Bool, { kind: 'leaf' });
+export default connectField<BoolFieldProps>(Bool, { kind: 'leaf' });

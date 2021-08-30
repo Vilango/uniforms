@@ -1,4 +1,3 @@
-// @ts-nocheck
 export { default as AutoField, AutoFieldProps } from './AutoField';
 export { default as AutoFields, AutoFieldsProps } from './AutoFields';
 export { default as AutoForm } from './AutoForm';
@@ -16,9 +15,9 @@ export { default as LongTextField, LongTextFieldProps } from './LongTextField';
 export { default as NestField, NestFieldProps } from './NestField';
 export { default as NumField, NumFieldProps } from './NumField';
 export { default as QuickForm } from './QuickForm';
-export { default as RadioField, RadioFieldProps } from './RadioField';
-export { default as SelectField, SelectFieldProps } from './SelectField';
+export { default as RadioField, ChoiceListPropsLocal } from './RadioField';
+export { default as SelectField } from './SelectField';
 export { default as SubmitField, SubmitFieldProps } from './SubmitField';
-export { default as TextField, TextFieldProps } from './TextField';
+export { default as TextField, TextFieldPropsLocal } from './TextField';
 export { default as ValidatedForm } from './ValidatedForm';
 export { default as ValidatedQuickForm } from './ValidatedQuickForm';

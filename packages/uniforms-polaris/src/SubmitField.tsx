@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Button, ButtonProps } from '@shopify/polaris';
 import React, { Ref } from 'react';
 import { Override, useForm } from 'uniforms';
@@ -19,9 +18,7 @@ function SubmitField({
   return (
     <Button
       disabled={disabled === undefined ? !!(error || state.disabled) : disabled}
-      htmlType="submit"
-      ref={inputRef}
-      type="primary"
+      primary
       {...props}
     >
       {children}

@@ -1,10 +1,7 @@
-// @ts-nocheck
 // import TextArea, { TextAreaProps, TextAreaRef } from 'antd/lib/input/TextArea';
 import { TextField, TextFieldProps } from '@shopify/polaris';
 import React, { Ref } from 'react';
 import { FieldProps, connectField, filterDOMProps } from 'uniforms';
-
-import wrapField from './wrapField';
 
 export type LongTextFieldProps = FieldProps<
   string,
@@ -19,10 +16,9 @@ function LongText({ ...props }: LongTextFieldProps) {
       label={props.label}
       disabled={props.disabled}
       name={props.name}
-      onChange={event => props.onChange(event.target.value)}
+      onChange={props.onChange}
       placeholder={props.placeholder}
       readOnly={props.readOnly}
-      ref={props.inputRef}
       value={props.value ?? ''}
       {...filterDOMProps(props)}
     />

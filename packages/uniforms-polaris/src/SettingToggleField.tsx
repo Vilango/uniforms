@@ -1,35 +1,25 @@
-// @ts-nocheck
 import React from 'react';
-import { connectField, filterDOMProps } from 'uniforms';
+import { connectField, filterDOMProps, FieldProps } from 'uniforms';
 import {
   SettingToggle as SettingTogglePolaris,
+  SettingToggleProps,
   TextStyle
 } from '@shopify/polaris';
 
+export type SettingTogglePropsLocal = FieldProps<
+  string,
+  SettingToggleProps,
+  { text: string; value: boolean; statusContent: any; id: string }
+>;
 const SettingToggle = ({
-  disabled,
-  id,
-  inputRef,
-  name,
-  onChange,
-  value,
-  actionContent,
-  statusContent,
+  action,
   text,
-  ...props
-}) => (
-  <div {...filterDOMProps(props)}>
-    <SettingTogglePolaris
-      id={id}
-      name={name}
-      action={{
-        id,
-        content: value ? actionContent['true'] : actionContent['false'],
-        onAction: () => onChange(!value),
-        disabled
-      }}
-      ref={inputRef}
-    >
+  value,
+  id,
+  statusContent
+}: SettingTogglePropsLocal) => (
+  <div>
+    <SettingTogglePolaris action={action}>
       <p data-testid={`paragraph-${id || ''}`}>
         {text}{' '}
         <TextStyle variation="strong">

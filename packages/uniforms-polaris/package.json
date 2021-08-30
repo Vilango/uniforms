@@ -27,8 +27,6 @@
     "src/*.tsx"
   ],
   "peerDependencies": {
-    "@shopify/polaris": "^3.18.0",
-    "@shopify/polaris-icons": "^3.4.0",
     "react": "^16.0.0 || ^17.0.0"
   },
   "dependencies": {

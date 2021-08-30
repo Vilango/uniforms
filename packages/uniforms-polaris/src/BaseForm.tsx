@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { BaseForm } from 'uniforms';
 import React from 'react';
 import { Form, FormLayout } from '@shopify/polaris';
@@ -16,7 +15,7 @@ const Polaris = (parent: any): any =>
       const formProps = pick(this.getNativeFormProps(), ['onSubmit']);
       return (
         <Form {...formProps}>
-          <FormLayout _={Math.random()} {...formLayoutProps} />
+          <FormLayout {...formLayoutProps} />
         </Form>
       );
     }

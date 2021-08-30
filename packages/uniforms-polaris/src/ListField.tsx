@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { QuestionMarkMajor } from '@shopify/polaris-icons';
 import { Icon, Tooltip } from '@shopify/polaris';
 import classNames from 'classnames';

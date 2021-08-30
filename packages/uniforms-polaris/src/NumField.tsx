@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { TextField, TextFieldProps } from '@shopify/polaris';
 import React, { Ref } from 'react';
 import { FieldProps, connectField, filterDOMProps } from 'uniforms';
@@ -25,7 +24,6 @@ function Num(props: NumFieldProps) {
       }}
       placeholder={props.placeholder}
       readOnly={props.readOnly}
-      ref={props.inputRef}
       step={props.step || (props.decimal ? 0.01 : 1)}
       value={props.value?.toString()}
       {...filterDOMProps(props)}

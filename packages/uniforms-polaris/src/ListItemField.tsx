@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { ReactNode } from 'react';
 import { connectField } from 'uniforms';
 
@@ -31,7 +30,7 @@ function ListItem({
   return (
     <div>
       <div style={delStyle}>
-        <ListDelField className="top aligned" name="" />
+        <ListDelField name="" />
       </div>
 
       <div style={itemStyle}>

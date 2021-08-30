@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { HTMLProps, Ref, useEffect } from 'react';
 import { Override, filterDOMProps, useField } from 'uniforms';
 

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import invariant from 'invariant';
 import { createAutoField } from 'uniforms';
 export { AutoFieldProps } from 'uniforms';

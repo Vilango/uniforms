@@ -1,8 +1,7 @@
-// @ts-nocheck
 import React, { HTMLProps } from 'react';
 import { Override, connectField, filterDOMProps } from 'uniforms';
 
-export type ErrorFieldProps = Override<
+export type ErrorsFieldProps = Override<
   Omit<HTMLProps<HTMLDivElement>, 'onChange'>,
   { error?: any; errorMessage?: string }
 >;
@@ -23,7 +22,7 @@ function Error({
   errorMessage,
   style = defaultStyle,
   ...props
-}: ErrorFieldProps) {
+}: ErrorsFieldProps) {
   return !error ? null : (
     <div style={style} {...filterDOMProps(props)}>
       {children || <div style={messageStyle}>{errorMessage}</div>}
@@ -31,7 +30,7 @@ function Error({
   );
 }
 
-export default connectField<ErrorFieldProps>(Error, {
+export default connectField<ErrorsFieldProps>(Error, {
   initialValue: false,
   kind: 'leaf'
 });

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { AutoForm } from 'uniforms';
 
 import ValidatedQuickForm from './ValidatedQuickForm';

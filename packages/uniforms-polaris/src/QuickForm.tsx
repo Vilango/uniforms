@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { QuickForm } from 'uniforms';
 
 import AutoField from './AutoField';

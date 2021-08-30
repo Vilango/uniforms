@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Button, ButtonProps } from '@shopify/polaris';
 import cloneDeep from 'lodash/cloneDeep';
 import React from 'react';

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import { connectField, filterDOMProps } from 'uniforms';
 
@@ -17,7 +16,7 @@ const dateParse = (
   }
 };
 
-type DateProps = {
+export type DateFieldProps = {
   disabled: boolean;
   id: string;
   inputRef: any;
@@ -41,7 +40,7 @@ const Date = ({
   placeholder,
   value,
   ...props
-}: DateProps) => (
+}: DateFieldProps) => (
   <div {...filterDOMProps(props)}>
     {label && <label htmlFor={id}>{label}</label>}
 
