@@ -1,10 +1,11 @@
-import BaseForm from 'uniforms/BaseForm';
+// @ts-nocheck
+import { BaseForm } from 'uniforms';
 import React from 'react';
-import {Form, FormLayout} from '@shopify/polaris';
+import { Form, FormLayout } from '@shopify/polaris';
 import omit from 'lodash/omit';
 import pick from 'lodash/pick';
 
-const Polaris = parent =>
+const Polaris = (parent: any): any =>
   class extends parent {
     static Polaris = Polaris;
 

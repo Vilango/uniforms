@@ -1,11 +1,14 @@
+// @ts-nocheck
 import React from 'react';
-import connectField from 'uniforms/connectField';
-import filterDOMProps from 'uniforms/filterDOMProps';
-import {Select as SelectPolaris, ChoiceList} from '@shopify/polaris';
+import { connectField, filterDOMProps } from 'uniforms';
+import { Select as SelectPolaris, ChoiceList } from '@shopify/polaris';
 import pick from 'lodash/pick';
 import isString from 'lodash/isString';
 
-const pickStritOptions = (props, {withHelpText = false, disabled = false}) => {
+const pickStritOptions = (
+  props,
+  { withHelpText = false, disabled = false }
+) => {
   const values = pick(props, ['value', 'label', 'disabled']);
   if (withHelpText) {
     values.helpText = props.helpText;
@@ -16,24 +19,39 @@ const pickStritOptions = (props, {withHelpText = false, disabled = false}) => {
   return values;
 };
 
-export const pickOptions = ({options, allowedValues, transform, disabled = false, withHelpText = false}) => {
+export const pickOptions = ({
+  options,
+  allowedValues,
+  transform,
+  disabled = false,
+  withHelpText = false
+}) => {
   const opts = options || allowedValues;
   const curOptions = opts.map(item => {
     // console.log('item', item);
     if (item instanceof Object && item.title && item.options instanceof Array) {
       // we have a group
-      return {title: item.title, options: item.options.map(o => pickStritOptions(o, {withHelpText, disabled}))};
+      return {
+        title: item.title,
+        options: item.options.map(o =>
+          pickStritOptions(o, { withHelpText, disabled })
+        )
+      };
     }
 
     if (item instanceof Object) {
       // we have regular options
       // console.log('We have a regular options', item);
-      return pickStritOptions(item, {withHelpText, disabled});
+      return pickStritOptions(item, { withHelpText, disabled });
     }
 
     if (isString(item)) {
       // console.log('We have a String options', item);
-      return {value: item, label: transform ? transform(item) : item, disabled};
+      return {
+        value: item,
+        label: transform ? transform(item) : item,
+        disabled
+      };
     }
     return item;
   });
@@ -52,7 +70,13 @@ const renderCheckboxes = ({
   fieldType,
   ...props
 }) => {
-  const opts = pickOptions({options, allowedValues, transform, disabled, withHelpText: true});
+  const opts = pickOptions({
+    options,
+    allowedValues,
+    transform,
+    disabled,
+    withHelpText: true
+  });
   const isAllowMultiple = fieldType === Array;
   // console.log('renderCheckboxes render', name, isAllowMultiple, disabled, opts);
 
@@ -97,7 +121,7 @@ const renderSelect = ({
 }) => {
   // console.log('renderSelect', name, props);
   // console.log('curOptions', opts, curOptions);
-  const opts = pickOptions({options, allowedValues, transform});
+  const opts = pickOptions({ options, allowedValues, transform });
   return (
     <SelectPolaris
       error={error && showInlineError && errorMessage}

@@ -1,8 +1,9 @@
 {
   "name": "@vilango/uniforms-polaris",
-  "version": "2.0.0-alpha.6",
+  "version": "3.5.5",
   "license": "MIT",
-  "main": "index.js",
+  "main": "./es5/index.js",
+  "module": "./esm/index.js",
   "description": "Unstyled components for uniforms.",
   "repository": "https://github.com/vilango/uniforms/tree/master/packages/uniforms-polaris",
   "bugs": "https://github.com/vilango/uniforms/issues",
@@ -16,20 +17,26 @@
     "validation"
   ],
   "files": [
-    "*.js",
-    "src/"
+    "es5/*.d.ts",
+    "es5/*.js",
+    "esm/*.d.ts",
+    "esm/*.js",
+    "es6/*.d.ts",
+    "es6/*.js",
+    "src/*.ts",
+    "src/*.tsx"
   ],
   "peerDependencies": {
     "@shopify/polaris": "^3.18.0",
     "@shopify/polaris-icons": "^3.4.0",
-    "react": "^16.0.0 || ^15.0.0 || ^0.14.0"
+    "react": "^16.0.0 || ^17.0.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "invariant": "^2.0.0",
     "lodash": "^4.0.0",
     "prop-types": "^15.5.7",
-    "uniforms": "^2.0.0-alpha.1"
+    "uniforms": "^3.5.5"
   },
   "gitHead": "65d1dfa0a208cfe582162f2bad811a337c69b6c0"
 }

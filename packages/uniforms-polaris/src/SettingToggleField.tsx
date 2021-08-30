@@ -1,7 +1,10 @@
+// @ts-nocheck
 import React from 'react';
-import connectField from 'uniforms/connectField';
-import filterDOMProps from 'uniforms/filterDOMProps';
-import {SettingToggle as SettingTogglePolaris, TextStyle} from '@shopify/polaris';
+import { connectField, filterDOMProps } from 'uniforms';
+import {
+  SettingToggle as SettingTogglePolaris,
+  TextStyle
+} from '@shopify/polaris';
 
 const SettingToggle = ({
   disabled,
@@ -28,7 +31,11 @@ const SettingToggle = ({
       ref={inputRef}
     >
       <p data-testid={`paragraph-${id || ''}`}>
-        {text} <TextStyle variation="strong">{value ? statusContent['true'] : statusContent['false']}</TextStyle>.
+        {text}{' '}
+        <TextStyle variation="strong">
+          {value ? statusContent['true'] : statusContent['false']}
+        </TextStyle>
+        .
       </p>
     </SettingTogglePolaris>
   </div>

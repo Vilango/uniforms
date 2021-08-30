@@ -37,6 +37,9 @@
     { "path": "packages/uniforms-semantic/tsconfig.es6.json" },
     { "path": "packages/uniforms-unstyled/tsconfig.es5.json" },
     { "path": "packages/uniforms-unstyled/tsconfig.esm.json" },
-    { "path": "packages/uniforms-unstyled/tsconfig.es6.json" }
+    { "path": "packages/uniforms-unstyled/tsconfig.es6.json" },
+    { "path": "packages/uniforms-polaris/tsconfig.es5.json" },
+    { "path": "packages/uniforms-polaris/tsconfig.esm.json" },
+    { "path": "packages/uniforms-polaris/tsconfig.es6.json" }
   ]
 }
