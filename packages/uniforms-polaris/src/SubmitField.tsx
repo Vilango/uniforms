@@ -19,6 +19,7 @@ function SubmitField({
     <Button
       disabled={disabled === undefined ? !!(error || state.disabled) : disabled}
       primary
+      submit
       {...props}
     >
       {children}
