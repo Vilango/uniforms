@@ -1,6 +1,6 @@
 import { QuestionMarkMajor } from '@shopify/polaris-icons';
 import { Icon, Tooltip } from '@shopify/polaris';
-import classNames from 'classnames';
+
 import React, {
   Children,
   cloneElement,
@@ -60,7 +60,6 @@ function List({
     <div
       {...filterDOMProps(props)}
       style={wrapperStyle}
-      className={classNames([className, 'ant-list', 'ant-list-bordered'])}
     >
       {!!label && (
         <div>
