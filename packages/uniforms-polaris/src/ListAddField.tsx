@@ -6,7 +6,7 @@ import {
   connectField,
   filterDOMProps,
   joinName,
-  useField
+  useField,
 } from 'uniforms';
 
 export type ListAddFieldProps = FieldProps<
@@ -14,8 +14,6 @@ export type ListAddFieldProps = FieldProps<
   ButtonProps,
   { initialCount?: number }
 >;
-
-const defaultStyle = { width: '100%' };
 
 function ListAdd({
   disabled,
@@ -54,5 +52,5 @@ function ListAdd({
 
 export default connectField<ListAddFieldProps>(ListAdd, {
   initialValue: false,
-  kind: 'leaf'
+  kind: 'leaf',
 });

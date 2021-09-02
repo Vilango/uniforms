@@ -11,7 +11,7 @@ const delStyle = {
   marginBottom: '10px',
   marginLeft: '10px',
   marginRight: '6px',
-  width: '20px'
+  width: '20px',
 };
 
 const itemStyle = { marginBottom: '24px', overflow: 'hidden' };
@@ -19,13 +19,13 @@ const itemStyle = { marginBottom: '24px', overflow: 'hidden' };
 const dividerStyle = {
   borderBottom: '1px solid #DDD',
   height: '20px',
-  marginTop: '-8px'
+  marginTop: '-8px',
 };
 
 const childrenStyle = { width: '100%' };
 
 function ListItem({
-  children = <AutoField label={null} name="" />
+  children = <AutoField label={null} name="" />,
 }: ListItemFieldProps) {
   return (
     <div>

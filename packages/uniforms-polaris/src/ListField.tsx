@@ -1,11 +1,10 @@
-import { QuestionMarkMajor } from '@shopify/polaris-icons';
 import { Icon, Tooltip } from '@shopify/polaris';
-
+import { QuestionMarkMajor } from '@shopify/polaris-icons';
 import React, {
   Children,
   cloneElement,
   isValidElement,
-  ReactNode
+  ReactNode,
 } from 'react';
 import { connectField, filterDOMProps, HTMLFieldProps } from 'uniforms';
 
@@ -29,14 +28,13 @@ export type ListFieldProps = HTMLFieldProps<
 const defaultStyle = {
   marginBottom: '5px',
   marginTop: '5px',
-  padding: '10px'
+  padding: '10px',
 };
 
 const errorStyle = { borderColor: 'rgb(255, 85, 0)' };
 
 function List({
   children = <ListItemField name="$" />,
-  className,
   error,
   errorMessage,
   info,
@@ -57,10 +55,7 @@ function List({
     : style;
 
   return (
-    <div
-      {...filterDOMProps(props)}
-      style={wrapperStyle}
-    >
+    <div {...filterDOMProps(props)} style={wrapperStyle}>
       {!!label && (
         <div>
           {label}
@@ -85,10 +80,10 @@ function List({
                 name: child.props.name?.replace('$', '' + itemIndex),
                 labelCol,
                 wrapperCol,
-                ...itemProps
+                ...itemProps,
               })
-            : child
-        )
+            : child,
+        ),
       )}
 
       <ListAddField name="$" initialCount={initialCount} />

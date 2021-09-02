@@ -1,6 +1,5 @@
 import Ajv from 'ajv';
 import { buildASTSchema, parse } from 'graphql';
-// @ts-expect-error: Typings.
 import MessageBox from 'message-box';
 import SimpleSchema from 'simpl-schema';
 import { filterDOMProps } from 'uniforms';

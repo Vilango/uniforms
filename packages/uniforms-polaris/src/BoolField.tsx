@@ -1,7 +1,6 @@
-import React, { Ref } from 'react';
-import { connectField } from 'uniforms';
-import { filterDOMProps } from 'uniforms';
 import { Checkbox } from '@shopify/polaris';
+import React, { Ref } from 'react';
+import { connectField, filterDOMProps } from 'uniforms';
 
 export type BoolFieldProps = {
   disabled: boolean;

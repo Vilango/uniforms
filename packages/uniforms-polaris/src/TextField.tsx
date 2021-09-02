@@ -15,9 +15,7 @@ function Text(props: TextFieldProps) {
       disabled={props.disabled}
       name={props.name}
       onChange={value =>
-        props.onChange
-          ? props.onChange(value, props.id ?? 'id')
-          : () => console.log('onChange not provided')
+        props.onChange ? props.onChange(value, props.id ?? 'id') : undefined
       }
       placeholder={props.placeholder}
       readOnly={props.readOnly}

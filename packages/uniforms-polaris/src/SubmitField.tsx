@@ -7,12 +7,7 @@ export type SubmitFieldProps = Override<
   { inputRef?: Ref<HTMLInputElement> }
 >;
 
-function SubmitField({
-  disabled,
-  inputRef,
-  children = '',
-  ...props
-}: SubmitFieldProps) {
+function SubmitField({ disabled, children = '', ...props }: SubmitFieldProps) {
   const { error, state } = useForm();
 
   return (

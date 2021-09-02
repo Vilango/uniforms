@@ -1,8 +1,6 @@
+import { ChoiceList, ChoiceListProps } from '@shopify/polaris';
 import React from 'react';
 import { connectField, filterDOMProps, FieldProps } from 'uniforms';
-import { ChoiceList, ChoiceListProps } from '@shopify/polaris';
-
-import { pickOptions } from './SelectField';
 
 export const xor = (item: any, array: any[]) => {
   const index = array.indexOf(item);
@@ -21,11 +19,9 @@ export type ChoiceListPropsLocal = FieldProps<
 
 const Radio = ({
   choices,
-  allowedValues,
   disabled,
   label,
   onChange,
-  transform,
   selected,
   ...props
 }: ChoiceListPropsLocal) => {

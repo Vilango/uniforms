@@ -6,7 +6,7 @@ const dateFormat = (value: Date) => value && value.toISOString().slice(0, -8);
 
 const dateParse = (
   timestamp: number,
-  onChange: (value: Date | undefined) => void
+  onChange: (value: Date | undefined) => void,
 ) => {
   const date = new DateConstructor(timestamp);
   if (date.getFullYear() < 10000) {

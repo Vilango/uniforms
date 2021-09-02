@@ -1,4 +1,3 @@
-import classnames from 'classnames';
 import { BaseForm } from 'uniforms';
 
 function Polaris(parent: any): any {

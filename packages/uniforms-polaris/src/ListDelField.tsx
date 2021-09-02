@@ -5,7 +5,7 @@ import {
   FieldProps,
   filterDOMProps,
   joinName,
-  useField
+  useField,
 } from 'uniforms';
 
 export type ListDelFieldProps = FieldProps<unknown, ButtonProps>;
@@ -24,7 +24,7 @@ function ListDel({
   const parent = useField<{ minCount?: number }, unknown[]>(
     parentName,
     {},
-    { absoluteName: true }
+    { absoluteName: true },
   )[0];
 
   const limitNotReached =
@@ -49,5 +49,5 @@ function ListDel({
 
 export default connectField<ListDelFieldProps>(ListDel, {
   initialValue: false,
-  kind: 'leaf'
+  kind: 'leaf',
 });

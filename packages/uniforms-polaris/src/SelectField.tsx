@@ -1,13 +1,13 @@
 // @ts-nocheck
+import { Select as SelectPolaris, ChoiceList } from '@shopify/polaris';
+import isString from 'lodash/isString';
+import pick from 'lodash/pick';
 import React from 'react';
 import { connectField, filterDOMProps } from 'uniforms';
-import { Select as SelectPolaris, ChoiceList } from '@shopify/polaris';
-import pick from 'lodash/pick';
-import isString from 'lodash/isString';
 
 const pickStritOptions = (
   props,
-  { withHelpText = false, disabled = false }
+  { withHelpText = false, disabled = false },
 ) => {
   const values = pick(props, ['value', 'label', 'disabled']);
   if (withHelpText) {
@@ -24,7 +24,7 @@ export const pickOptions = ({
   allowedValues,
   transform,
   disabled = false,
-  withHelpText = false
+  withHelpText = false,
 }) => {
   const opts = options || allowedValues;
   const curOptions = opts.map(item => {
@@ -34,8 +34,8 @@ export const pickOptions = ({
       return {
         title: item.title,
         options: item.options.map(o =>
-          pickStritOptions(o, { withHelpText, disabled })
-        )
+          pickStritOptions(o, { withHelpText, disabled }),
+        ),
       };
     }
 
@@ -50,7 +50,7 @@ export const pickOptions = ({
       return {
         value: item,
         label: transform ? transform(item) : item,
-        disabled
+        disabled,
       };
     }
     return item;
@@ -75,7 +75,7 @@ const renderCheckboxes = ({
     allowedValues,
     transform,
     disabled,
-    withHelpText: true
+    withHelpText: true,
   });
   const isAllowMultiple = fieldType === Array;
   // console.log('renderCheckboxes render', name, isAllowMultiple, disabled, opts);
@@ -163,7 +163,7 @@ const Select = ({
       onChange,
       value,
       fieldType,
-      ...props
+      ...props,
     });
   }
 
@@ -177,7 +177,7 @@ const Select = ({
     value,
     inputRef,
     required,
-    ...props
+    ...props,
   });
 };
 export default connectField(Select);

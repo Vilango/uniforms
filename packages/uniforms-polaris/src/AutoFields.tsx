@@ -31,9 +31,9 @@ export default function AutoFields({
           autoField,
           Object.assign(
             { key: field, name: field },
-            showInlineError === undefined ? null : { showInlineError }
-          )
-        )
-      )
+            showInlineError === undefined ? null : { showInlineError },
+          ),
+        ),
+      ),
   );
 }

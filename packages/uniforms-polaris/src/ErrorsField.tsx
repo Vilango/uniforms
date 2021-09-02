@@ -11,7 +11,7 @@ const defaultStyle = {
   border: '1px solid rgb(255, 85, 0)',
   borderRadius: '2px',
   margin: '20px 0px',
-  padding: '10px'
+  padding: '10px',
 };
 
 const messageStyle = { margin: '3px' };
@@ -32,5 +32,5 @@ function Error({
 
 export default connectField<ErrorsFieldProps>(Error, {
   initialValue: false,
-  kind: 'leaf'
+  kind: 'leaf',
 });

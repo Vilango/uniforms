@@ -1,10 +1,10 @@
-import React from 'react';
-import { connectField, filterDOMProps, FieldProps } from 'uniforms';
 import {
   SettingToggle as SettingTogglePolaris,
   SettingToggleProps,
-  TextStyle
+  TextStyle,
 } from '@shopify/polaris';
+import React from 'react';
+import { connectField, FieldProps } from 'uniforms';
 
 export type SettingTogglePropsLocal = FieldProps<
   string,
@@ -16,7 +16,7 @@ const SettingToggle = ({
   text,
   value,
   id,
-  statusContent
+  statusContent,
 }: SettingTogglePropsLocal) => (
   <div>
     <SettingTogglePolaris action={action}>
