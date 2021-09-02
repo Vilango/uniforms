@@ -9,6 +9,7 @@
 /packages/*/esm
 /packages/*/es6
 /packages/*/node_modules
+/packages/website
 /reproductions/.cache
 /reproductions/dist
 /reproductions/node_modules
