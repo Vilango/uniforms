@@ -1,6 +1,6 @@
 {
   "name": "@vilango/uniforms-polaris",
-  "version": "2.0.0-alpha.6",
+  "version": "3.5.5",
   "license": "MIT",
   "main": "index.js",
   "description": "Unstyled components for uniforms.",
@@ -29,7 +29,7 @@
     "invariant": "^2.0.0",
     "lodash": "^4.0.0",
     "prop-types": "^15.5.7",
-    "uniforms": "^2.0.0-alpha.1"
+    "uniforms": "^3.5.5"
   },
   "gitHead": "65d1dfa0a208cfe582162f2bad811a337c69b6c0"
 }
