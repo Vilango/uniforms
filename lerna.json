@@ -1,9 +1,7 @@
 {
   "version": "3.5.5",
   "packages": [
-    "packages/uniforms",
-    "packages/uniforms-bridge-simple-schema-2",
-    "packages/uniforms-polaris",
-    "packages/uniforms-unstyled"
+    "packages/*",
+    "website"
   ]
 }

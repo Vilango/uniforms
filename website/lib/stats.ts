@@ -53,6 +53,7 @@ function dateRanges(from: Date, to: Date) {
 
   const dates = [];
   while (from < to) {
+    // @ts-expect-error
     dates.push(`${formatDate(from)}:${formatDate(nextMonth(from))}`);
   }
 

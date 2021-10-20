@@ -2,7 +2,6 @@ import ConfigProvider from 'antd/lib/config-provider';
 import classNames from 'classnames';
 import omit from 'lodash/omit';
 import React, { Component } from 'react';
-// @ts-expect-error
 import Frame, { FrameContextConsumer } from 'react-frame-component';
 import { ValidatedForm, connectField, context, useForm } from 'uniforms';
 
@@ -139,16 +138,11 @@ class PlaygroundPreview extends Component<any, any> {
   _schema: any;
 
   render() {
-    const { AutoFields, AutoForm, ErrorsField, SubmitField } = themes[
-      (this.props.theme as keyof typeof themes) || 'unstyled'
-    ];
+    const { AutoFields, AutoForm, ErrorsField, SubmitField } =
+      themes[(this.props.theme as keyof typeof themes) || 'unstyled'];
 
-    const {
-      asyncOnSubmit,
-      asyncOnValidate,
-      schema,
-      ...props
-    } = this.props.value;
+    const { asyncOnSubmit, asyncOnValidate, schema, ...props } =
+      this.props.value;
 
     props.schema = this._schema;
     if (asyncOnSubmit) {
@@ -195,13 +189,8 @@ class PlaygroundProps extends Component<any, any> {
     const isSemantic = theme === 'semantic';
 
     // FIXME: theme is undefined during `docusaurus build`.
-    const {
-      AutoForm,
-      BoolField,
-      ErrorsField,
-      LongTextField,
-      NumField,
-    } = themes[(theme as keyof typeof themes) || 'unstyled'];
+    const { AutoForm, BoolField, ErrorsField, LongTextField, NumField } =
+      themes[(theme as keyof typeof themes) || 'unstyled'];
 
     return (
       <PlaygroundWrap theme={theme}>
