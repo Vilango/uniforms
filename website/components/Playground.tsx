@@ -10,7 +10,7 @@ import presets from '../lib/presets';
 import { bridge, schema } from '../lib/schema';
 import styles from '../lib/styles';
 import { themes } from '../lib/universal';
-import { parseQuery, updateQuery } from '../lib/utils';
+import { compress, parseQuery, updateQuery } from '../lib/utils';
 
 export class Playground extends Component<any, any> {
   static getDerivedStateFromError(error: Error) {
@@ -165,7 +165,7 @@ class PlaygroundPreview extends Component<any, any> {
         {this.props.errorMessage ? (
           <span children={this.props.errorMessage} />
         ) : (
-          <AutoForm key={schema} {...props}>
+          <AutoForm key={compress(schema)} {...props}>
             <AutoFields />
             <ErrorsField />
             <SubmitField />

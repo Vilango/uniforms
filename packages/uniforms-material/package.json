@@ -1,8 +1,8 @@
 {
   "name": "uniforms-material",
-  "version": "3.5.5",
+  "version": "3.6.2",
   "license": "MIT",
-  "main": "./es5/index.js",
+  "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "sideEffects": false,
   "description": "Material UI components for uniforms.",
@@ -20,12 +20,10 @@
     "validation"
   ],
   "files": [
-    "es5/*.d.ts",
-    "es5/*.js",
+    "cjs/*.d.ts",
+    "cjs/*.js",
     "esm/*.d.ts",
     "esm/*.js",
-    "es6/*.d.ts",
-    "es6/*.js",
     "src/*.ts",
     "src/*.tsx"
   ],
@@ -37,6 +35,6 @@
     "invariant": "^2.0.0",
     "lodash": "^4.0.0",
     "tslib": "^2.2.0",
-    "uniforms": "^3.5.5"
+    "uniforms": "^3.6.2"
   }
 }

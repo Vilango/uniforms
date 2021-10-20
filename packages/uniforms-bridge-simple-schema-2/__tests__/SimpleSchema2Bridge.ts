@@ -7,6 +7,7 @@ describe('SimpleSchema2Bridge', () => {
     a: { type: Object },
     'a.b': { type: Object },
     'a.b.c': { type: String },
+    aa: { type: String, uniforms: { type: 'password' } },
     d: { type: String, defaultValue: 'D' },
     e: { type: String, allowedValues: ['E'] },
     f: { type: Number, min: 42 },
@@ -38,6 +39,13 @@ describe('SimpleSchema2Bridge', () => {
     u: { type: SimpleSchema.Integer },
     w: { type: new SimpleSchema({ x: String }) },
     x: { type: String, autoValue: () => '$setOnInsert:hack!' },
+    y: { type: Array, defaultValue: ['y'] },
+    'y.$': String,
+    z: { type: Object, defaultValue: { a: 'a' } },
+    'z.a': String,
+    zs: { type: Array, defaultValue: [{ a: 'a' }] },
+    'zs.$': Object,
+    'zs.$.a': String,
     // FIXME: `SimpleSchemaDefinition` ignores `extendOptions`.
   } as any);
 
@@ -136,7 +144,7 @@ describe('SimpleSchema2Bridge', () => {
     });
 
     it('throws on not found field', () => {
-      expect(() => bridge.getField('y')).toThrow(/Field not found in schema/);
+      expect(() => bridge.getField('xxx')).toThrow(/Field not found in schema/);
     });
   });
 
@@ -159,8 +167,20 @@ describe('SimpleSchema2Bridge', () => {
       ]);
     });
 
+    it('works with arrays (defaultValue)', () => {
+      expect(bridge.getInitialValue('y')).toEqual(['y']);
+    });
+
+    it('works with arrays of objects (defaultValue)', () => {
+      expect(bridge.getInitialValue('zs')).toEqual([{ a: 'a' }]);
+    });
+
     it('works with objects', () => {
       expect(bridge.getInitialValue('a')).toEqual({});
+    });
+
+    it('works with objects (defaultValue)', () => {
+      expect(bridge.getInitialValue('z')).toEqual({ a: 'a' });
     });
   });
 
@@ -259,12 +279,29 @@ describe('SimpleSchema2Bridge', () => {
         required: true,
       });
     });
+
+    it('works with type', () => {
+      expect(bridge.getProps('aa')).toEqual({
+        label: 'Aa',
+        type: 'password',
+        required: true,
+      });
+    });
+
+    it('returns no field type', () => {
+      expect(bridge.getProps('a')).not.toHaveProperty('type');
+      expect(bridge.getProps('j')).not.toHaveProperty('type');
+      expect(bridge.getProps('d')).not.toHaveProperty('type');
+      expect(bridge.getProps('f')).not.toHaveProperty('type');
+      expect(bridge.getProps('i')).not.toHaveProperty('type');
+    });
   });
 
   describe('#getSubfields', () => {
     it('works on top level', () => {
       expect(bridge.getSubfields()).toEqual([
         'a',
+        'aa',
         'd',
         'e',
         'f',
@@ -284,6 +321,9 @@ describe('SimpleSchema2Bridge', () => {
         'u',
         'w',
         'x',
+        'y',
+        'z',
+        'zs',
       ]);
     });
 

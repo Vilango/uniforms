@@ -1,3 +1,22 @@
+## [v3.6.2](https://github.com/vazco/uniforms/tree/v3.6.2) (2021-10-15)
+
+- **Fixed:** Handling of `initialValue` in `NumField`. [\#1004](https://github.com/vazco/uniforms/issues/1004)
+- **Fixed:** Handling of `label` in `BoolField` in `uniforms-semantic`. [\#1042](https://github.com/vazco/uniforms/issues/1042)
+- **Fixed:** Handling of `type` in both SimpleSchema-based bridges. [\#1039](https://github.com/vazco/uniforms/issues/1039)
+
+## [v3.6.1](https://github.com/vazco/uniforms/tree/v3.6.1) (2021-09-29)
+
+- **Fixed:** All components in `uniforms-material` are now respecting the theme correctly. [\#993](https://github.com/vazco/uniforms/issues/993)
+- **Fixed:** Build configuration. [\#1001](https://github.com/vazco/uniforms/issues/1001)
+- **Fixed:** Types of `ListAddField` and `ListDelField` in `uniforms-antd` for `antd@4.16.13`. [\#1004](https://github.com/vazco/uniforms/issues/1004)
+
+## [v3.6.0](https://github.com/vazco/uniforms/tree/v3.6.0) (2021-09-13)
+
+- **Added:** Explicit form types. [\#1003](https://github.com/vazco/uniforms/issues/1003)
+- **Added:** Support for changing field value in `changedKeys`. [\#982](https://github.com/vazco/uniforms/issues/982)
+- **Added:** Support for recursive `$ref`s in `JSONSchemaBrdige`. [\#1006](https://github.com/vazco/uniforms/issues/1006)
+- **Fixed:** Default values resolution in SimpleSchema bridges. [\#1008](https://github.com/vazco/uniforms/issues/1008)
+
 ## [v3.5.5](https://github.com/vazco/uniforms/tree/v3.5.5) (2021-08-13)
 
 - **Fixed:** Types of `DateField`, `LongTextField`, `NumField`, and `TextField` in `uniforms-material` are now correctly based on `TextFieldProps`. [\#987](https://github.com/vazco/uniforms/issues/987)
