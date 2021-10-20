@@ -1,6 +1,6 @@
 {
   "name": "@vilango/uniforms-polaris",
-  "version": "3.5.5",
+  "version": "3.6.2",
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
